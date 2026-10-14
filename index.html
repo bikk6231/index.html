@@ -2,11 +2,14 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PSYCHO | Gaming World</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -28,6 +31,10 @@ header h1 {
   font-size: 30px;
 }
 
+header p {
+  color: white;
+}
+
 main {
   max-width: 650px;
   margin: auto;
@@ -42,14 +49,20 @@ main {
   margin: 20px 0;
 }
 
-.card img, #bigImage {
+.card img,
+#bigImage {
   width: 100%;
   display: block;
+  height: auto;
 }
 
-.content { padding: 16px; }
+.content {
+  padding: 16px;
+}
 
-h2 { color: #ffca48; }
+h2 {
+  color: #ffca48;
+}
 
 p {
   line-height: 1.7;
@@ -73,27 +86,38 @@ button {
   width: 100%;
 }
 
-#payment, #detail { display: none; }
-
-#bigImage {
-  border-radius: 10px;
+#payment,
+#detail {
+  display: none;
 }
 
-.back { margin-bottom: 15px; }
+.back {
+  margin-bottom: 15px;
+}
 
 footer {
   text-align: center;
   padding: 22px;
   color: #aaa;
 }
+
+.qr {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  background: white;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>⚡ PSYCHO ⚡</h1>
-  <p>🔥 My Gaming World 🔥</p>
+  <h1> CARDING </h1>
+  <p> CARD ABILABLE 🎮</p>
 </header>
 
 <main>
@@ -101,12 +125,16 @@ footer {
 <section id="gallery">
 
   <div class="card">
-    <img src="IMG_20261014_065311" alt="My Free Fire Gaming Profile">
+    <img
+      src="game.jpg"
+      alt="My Free Fire Gaming Profile"
+      onerror="this.style.display='none'"
+    >
 
     <div class="content">
-      <h2>🎮 MY FREE FIRE PROFILE</h2>
+      <h2>MY FREE FIRE PROFILE</h2>
       <p>Welcome to my gaming world!</p>
-      <p>🔥 Free Fire • Gaming • PSYCHO 🔥</p>
+      <p>Free Fire Gaming PSYCHO 🔥</p>
 
       <button onclick="showPage()">
         View Gaming Profile
@@ -116,11 +144,11 @@ footer {
 
   <div class="card">
     <div class="content">
-      <h2>🛒 BUY NOW</h2>
+      <h2>BUY NOW</h2>
       <p>Buy karne ke liye neeche button par click karein.</p>
 
       <button class="buy" onclick="showPayment()">
-        BUY NOW 💚
+        BUY NOW — ₹2800
       </button>
     </div>
   </div>
@@ -128,30 +156,62 @@ footer {
 </section>
 
 <section id="detail">
+
   <button class="back" onclick="goBack()">← Back</button>
-  <img id="bigImage" src="game.jpg" alt="Gaming Profile">
-  <div class="content">
-    <h2>🔥 My Free Fire Profile</h2>
-    <p>Welcome to my gaming world! 🎮</p>
+
+  <div class="card">
+    <img
+      id="bigImage"
+      src="game.jpg"
+      alt="Free Fire Profile"
+      onerror="this.style.display='none'"
+    >
+
+    <div class="content">
+      <h2>My Free Fire Profile</h2>
+      <p>Welcome to my gaming world!</p>
+      <p>🔥 PSYCHO Gaming 🔥</p>
+    </div>
   </div>
+
 </section>
 
 <section id="payment">
+
   <button class="back" onclick="goBack()">← Back</button>
 
   <div class="card">
     <div class="content">
-      <h2>💳 PhonePe QR Code</h2>
+      <h2>PhonePe QR Code</h2>
+
       <p>Payment karne ke liye QR code scan karein.</p>
-      <img id="qrImage" src="qr.jpg" alt="PhonePe QR Code">
-      <p>Payment karne se pehle receiver ka naam aur amount verify karein.</p>
+      <p><strong>Amount to Pay: ₹2800</strong></p>
+
+      <!-- Apni QR image ka sahi file name yahan likhein -->
+      <img
+        class="qr"
+        src="phonepe-qr.jpg"
+        alt="PhonePe QR Code"
+        onerror="this.style.display='none'; document.getElementById('qrError').style.display='block'"
+      >
+
+      <p id="qrError" style="display:none;color:#ff7777">
+        QR image nahi mili. phonepe-qr.jpg file ko
+        index.html ke saath same folder mein rakhein.
+      </p>
+
+      <p>QR scan karke payment karein.</p>
+      <p>Payment se pehle receiver ka naam aur amount check karein.</p>
     </div>
   </div>
+
 </section>
 
 </main>
 
-<footer>Made with ❤️ by PSYCHO</footer>
+<footer>
+  Made with ❤️ by PSYCHO
+</footer>
 
 <script>
 function hideAll() {
@@ -180,4 +240,4 @@ function goBack() {
 </script>
 
 </body>
-</html>
+  </html>
