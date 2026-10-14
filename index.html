@@ -1,1 +1,229 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Photo Store</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 25px 12px;
+  text-align: center;
+  background: #191919;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+header p {
+  margin: 0;
+  color: #cccccc;
+}
+
+.gallery {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 14px;
+}
+
+.photo-card {
+  margin-bottom: 22px;
+  overflow: hidden;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  background: #1c1c1c;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo-title {
+  padding: 12px;
+  text-align: center;
+  color: #dddddd;
+}
+
+.buy-section {
+  padding: 30px 16px;
+  text-align: center;
+  background: #191919;
+}
+
+.price {
+  margin: 18px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  margin: 12px auto;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.payment {
+  display: none;
+  padding: 25px 15px;
+  background: #f4f4f4;
+  color: #111111;
+  text-align: center;
+}
+
+.payment-box {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 14px;
+  background: white;
+}
+
+.qr-code {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.back-button {
+  background: #222222;
+  color: white;
+}
+
+footer {
+  padding: 18px;
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>My Photo Store 📸</h1>
+  <p>Explore My Photo Collection</p>
+</header>
+
+<main>
+  <section class="gallery">
+
+    <div class="photo-card">
+      <img src="unnamed%20(3).jpg" alt="Photo 1">
+      <div class="photo-title">Photo 1</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="unnamed%20(4).jpg" alt="Photo 2">
+      <div class="photo-title">Photo 2</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="unnamed%20(2).jpg" alt="Photo 3">
+      <div class="photo-title">Photo 3</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="unnamed%20(1).jpg" alt="Photo 4">
+      <div class="photo-title">Photo 4</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="unnamed%20(5).jpg" alt="Photo 5">
+      <div class="photo-title">Photo 5</div>
+    </div>
+
+  </section>
+
+  <section class="buy-section" id="buySection">
+    <h2>Apni Pasand Ki Photo Kharidein ❤️</h2>
+    <p>Payment ke liye neeche tap karein.</p>
+    <div class="price">₹99</div>
+
+    <button type="button" onclick="showPayment()">
+      BUY NOW →
+    </button>
+  </section>
+
+  <section class="payment" id="paymentSection">
+    <div class="payment-box">
+      <h2>Scan & Pay</h2>
+      <p>Payment Amount: <strong>₹99</strong></p>
+
+      <img
+        class="qr-code"
+        src="IMG_20261014_054411.jpg"
+        alt="Payment QR Code"
+      >
+
+      <p>Apne UPI app se QR code scan karein.</p>
+      <p>Payment se pehle recipient aur amount verify karein.</p>
+
+      <button
+        type="button"
+        class="back-button"
+        onclick="hidePayment()">
+        ← Back to Photos
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  My Photo Store
+</footer>
+
+<script>
+function showPayment() {
+  document.getElementById("buySection").style.display = "none";
+  document.getElementById("paymentSection").style.display = "block";
+
+  document.getElementById("paymentSection").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function hidePayment() {
+  document.getElementById("paymentSection").style.display = "none";
+  document.getElementById("buySection").style.display = "block";
+
+  document.getElementById("buySection").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+</script>
+
+</body>
+  </html>
+  
