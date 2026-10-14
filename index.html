@@ -1,227 +1,183 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSYCHO | Gaming World</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      padding: 18px;
-      background: #f2f4f8;
-      color: #202124;
-      font-family: Arial, sans-serif;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080910;
+  color: white;
+}
 
-    header {
-      text-align: center;
-      background: #171923;
-      color: white;
-      padding: 22px 10px;
-      border-radius: 16px;
-      margin-bottom: 22px;
-    }
+header {
+  text-align: center;
+  padding: 25px 12px;
+  background: linear-gradient(135deg, #170b25, #5d101c, #111827);
+  border-bottom: 2px solid #ffbd35;
+}
 
-    header h1 {
-      margin: 0 0 8px;
-      font-size: 27px;
-    }
+header h1 {
+  color: #ffc43d;
+  margin: 0;
+  font-size: 30px;
+}
 
-    header p {
-      margin: 0;
-      color: #d7d9e0;
-    }
+main {
+  max-width: 650px;
+  margin: auto;
+  padding: 16px;
+}
 
-    .photo-card {
-      max-width: 520px;
-      margin: 0 auto 25px;
-      padding: 14px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.09);
-    }
+.card {
+  background: #151621;
+  border: 1px solid #ffbd35;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 20px 0;
+}
 
-    .photo-card img.photo {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-      object-fit: contain;
-      border-radius: 10px;
-      background: #eeeeee;
-    }
+.card img, #bigImage {
+  width: 100%;
+  display: block;
+}
 
-    .photo-title {
-      text-align: center;
-      font-size: 19px;
-      font-weight: bold;
-      margin: 14px 0;
-    }
+.content { padding: 16px; }
 
-    .buy-button {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      background: #087f5b;
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+h2 { color: #ffca48; }
 
-    .buy-button:active {
-      background: #066749;
-    }
+p {
+  line-height: 1.7;
+  color: #ddd;
+}
 
-    .qr-area {
-      display: none;
-      margin-top: 16px;
-      padding: 15px;
-      border: 1px solid #dddddd;
-      border-radius: 12px;
-      text-align: center;
-      background: #fafafa;
-    }
+button {
+  border: 0;
+  background: #ffbd35;
+  color: #17100a;
+  font-weight: bold;
+  padding: 13px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-    .qr-area img {
-      display: block;
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-      margin: 12px auto;
-      background: white;
-    }
+.buy {
+  background: #25c66a;
+  color: white;
+  width: 100%;
+}
 
-    .qr-area p {
-      overflow-wrap: anywhere;
-    }
+#payment, #detail { display: none; }
 
-    .error-message {
-      display: none;
-      padding: 12px;
-      color: #b00020;
-      text-align: center;
-      overflow-wrap: anywhere;
-    }
+#bigImage {
+  border-radius: 10px;
+}
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      color: #666666;
-    }
-  </style>
+.back { margin-bottom: 15px; }
+
+footer {
+  text-align: center;
+  padding: 22px;
+  color: #aaa;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>📸 My Photo Store</h1>
-    
-  </header>
+<header>
+  <h1>⚡ PSYCHO ⚡</h1>
+  <p>🔥 My Gaming World 🔥</p>
+</header>
 
-  <main>
+<main>
 
-    <div class="photo-card">
-      <img class="photo"
-        src="IMG_20261014_065311.jpg"
-         alt="Photo 1"
-        
-       </div>
-      
-      <div class="photo-title">Photo 1</div>
-      <button class="buy-button" onclick="showQR(1)">Buy</button>
-      <div class="qr-area" id="qr-1"></div>
+<section id="gallery">
+
+  <div class="card">
+    <img src="IMG_20261014_065311" alt="My Free Fire Gaming Profile">
+
+    <div class="content">
+      <h2>🎮 MY FREE FIRE PROFILE</h2>
+      <p>Welcome to my gaming world!</p>
+      <p>🔥 Free Fire • Gaming • PSYCHO 🔥</p>
+
+      <button onclick="showPage()">
+        View Gaming Profile
+      </button>
     </div>
+  </div>
 
-    <div class="photo-card">
-      <img class="photo"
-           src="IMG_20261014_062709.jpg"
-           alt="Photo 2"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <div class="error-message">
-        फोटो 2 नहीं मिली। GitHub में इसका सही नाम और एक्सटेंशन जाँचें।
-      </div>
-      <div class="photo-title">Photo 2</div>
-      <button class="buy-button" onclick="showQR(2)">Buy</button>
-      <div class="qr-area" id="qr-2"></div>
+  <div class="card">
+    <div class="content">
+      <h2>🛒 BUY NOW</h2>
+      <p>Buy karne ke liye neeche button par click karein.</p>
+
+      <button class="buy" onclick="showPayment()">
+        BUY NOW 💚
+      </button>
     </div>
+  </div>
 
-    <div class="photo-card">
-      <img class="photo"
-           src="IMG_20261014_062732.jpg"
-           alt="Photo 3"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <div class="error-message">
-        फोटो 3 नहीं मिली। GitHub में इसका सही नाम और एक्सटेंशन जाँचें।
-      </div>
-      <div class="photo-title">Photo 3</div>
-      <button class="buy-button" onclick="showQR(3)">Buy</button>
-      <div class="qr-area" id="qr-3"></div>
+</section>
+
+<section id="detail">
+  <button class="back" onclick="goBack()">← Back</button>
+  <img id="bigImage" src="game.jpg" alt="Gaming Profile">
+  <div class="content">
+    <h2>🔥 My Free Fire Profile</h2>
+    <p>Welcome to my gaming world! 🎮</p>
+  </div>
+</section>
+
+<section id="payment">
+  <button class="back" onclick="goBack()">← Back</button>
+
+  <div class="card">
+    <div class="content">
+      <h2>💳 PhonePe QR Code</h2>
+      <p>Payment karne ke liye QR code scan karein.</p>
+      <img id="qrImage" src="qr.jpg" alt="PhonePe QR Code">
+      <p>Payment karne se pehle receiver ka naam aur amount verify karein.</p>
     </div>
+  </div>
+</section>
 
-    <div class="photo-card">
-      <img class="photo"
-           src="IMG_20261014_062746.jpg"
-           alt="Photo 4"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <div class="error-message">
-        फोटो 4 नहीं मिली। GitHub में इसका सही नाम और एक्सटेंशन जाँचें।
-      </div>
-      <div class="photo-title">Photo 4</div>
-      <button class="buy-button" onclick="showQR(4)">Buy</button>
-      <div class="qr-area" id="qr-4"></div>
-    </div>
+</main>
 
-    <div class="photo-card">
-      <img class="photo"
-           src="IMG_20261014_062804.jpg"
-           alt="Photo 5"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <div class="error-message">
-        फोटो 5 नहीं मिली। GitHub में इसका सही नाम और एक्सटेंशन जाँचें।
-      </div>
-      <div class="photo-title">Photo 5</div>
-      <button class="buy-button" onclick="showQR(5)">Buy</button>
-      <div class="qr-area" id="qr-5"></div>
-    </div>
+<footer>Made with ❤️ by PSYCHO</footer>
 
-  </main>
+<script>
+function hideAll() {
+  document.getElementById("gallery").style.display = "none";
+  document.getElementById("detail").style.display = "none";
+  document.getElementById("payment").style.display = "none";
+}
 
-  <footer>
-    © My Photo Store
-  </footer>
+function showPage() {
+  hideAll();
+  document.getElementById("detail").style.display = "block";
+  window.scrollTo(0, 0);
+}
 
-  <script>
-    function showQR(number) {
-      var area = document.getElementById("qr-" + number);
+function showPayment() {
+  hideAll();
+  document.getElementById("payment").style.display = "block";
+  window.scrollTo(0, 0);
+}
 
-      if (area.style.display === "block") {
-        area.style.display = "none";
-        area.innerHTML = "";
-        return;
-      }
-
-      area.innerHTML =
-        '<h3>Scan QR Code</h3>' +
-        '<p>पेमेंट करने से पहले सही प्राप्तकर्ता और राशि जाँच लें।</p>' +
-        '<img src="IMG_20261014_054411.jpg" alt="Payment QR Code" ' +
-        'onerror="this.style.display=\'none\';' +
-        'this.nextElementSibling.style.display=\'block\';">' +
-        '<p class="error-message" style="display:none;">' +
-        'QR नहीं मिला। GitHub में QR का सही नाम और एक्सटेंशन जाँचें।' +
-        '</p>';
-
-      area.style.display = "block";
-    }
-  </script>
+function goBack() {
+  hideAll();
+  document.getElementById("gallery").style.display = "block";
+  window.scrollTo(0, 0);
+}
+</script>
 
 </body>
 </html>
