@@ -3,102 +3,47 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090817">
-<title>PSYCHO AI | Version 2</title>
-
+<title>PSYCHO AI V3</title>
 <style>
 *{box-sizing:border-box}
-body{
-  margin:0;background:#090817;color:#f5f3ff;
-  font-family:Arial,sans-serif;min-height:100vh
-}
-header{
-  padding:20px 15px;text-align:center;
-  background:linear-gradient(135deg,#24104c,#11152e);
-  border-bottom:1px solid #55338c
-}
-.logo{
-  font-size:27px;font-weight:900;letter-spacing:2px;
-  color:#c7a7ff;text-shadow:0 0 18px #8c42ff
-}
-.subtitle{font-size:12px;color:#b9b2d0;margin-top:7px}
-.container{max-width:720px;margin:auto;padding:14px}
-.status{
-  display:flex;align-items:center;gap:8px;
-  padding:12px;background:#151329;border:1px solid #30284e;
-  border-radius:12px;font-size:12px;color:#c9bddf
-}
-.dot{width:8px;height:8px;border-radius:50%;background:#49efaa}
-.modes{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:7px;margin:14px 0
-}
-.mode{
-  background:#151329;border:1px solid #30284e;color:#dcd4ef;
-  border-radius:10px;padding:12px 3px;font-size:12px;
-  cursor:pointer
-}
-.mode.active{background:#4c2380;border-color:#bb8aff;color:white}
-.chat{
-  height:48vh;min-height:280px;max-height:500px;overflow-y:auto;
-  padding:12px;background:#0e0c1c;
-  border:1px solid #30284e;border-radius:14px;
-  display:flex;flex-direction:column;gap:12px
-}
-.msg{
-  padding:12px 14px;border-radius:14px;max-width:90%;
-  line-height:1.55;font-size:14px;white-space:pre-wrap;
-  overflow-wrap:anywhere
-}
-.bot{align-self:flex-start;background:#201735;border:1px solid #45305e}
-.user{align-self:flex-end;background:#482477;border:1px solid #7243a4}
-.name{font-size:10px;color:#c9a9ff;margin-bottom:5px;font-weight:bold}
-.quick-title{font-size:12px;color:#a99cbc;margin:15px 0 8px}
-.quick{display:flex;flex-wrap:wrap;gap:7px}
-.quick button{
-  background:#17142a;color:#dcd4ef;border:1px solid #3a3155;
-  padding:9px 11px;border-radius:20px;font-size:12px;cursor:pointer
-}
-.composer{
-  margin-top:12px;padding:10px;background:#151329;
-  border:1px solid #383052;border-radius:14px
-}
-textarea{
-  width:100%;resize:vertical;min-height:50px;max-height:140px;
-  background:transparent;border:0;outline:none;color:white;
-  font-size:15px;padding:8px;font-family:inherit
-}
-.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.btn{
-  border:0;border-radius:10px;padding:11px 14px;
-  cursor:pointer;font-weight:bold;font-size:12px
-}
-.send{background:#a66bff;color:#160b28;flex:1}
-.voice{background:#29213e;color:white;border:1px solid #574477}
-.voice.listening{background:#9c284e}
-.small{background:#201b32;color:#c9bddf;border:1px solid #39304e}
-.note{font-size:11px;color:#8e85a6;line-height:1.6;margin:12px 3px}
-button:active{transform:scale(.98)}
-@media(max-width:380px){
-  .logo{font-size:23px}
-  .mode{font-size:11px}
-  .btn{padding:10px}
-}
+body{margin:0;background:#090817;color:#f5f0ff;font-family:Arial,sans-serif}
+header{text-align:center;padding:20px;background:linear-gradient(135deg,#28104d,#10162d);border-bottom:1px solid #7040a8}
+.logo{font-size:27px;font-weight:900;color:#d5b7ff;letter-spacing:2px}
+.sub{font-size:12px;color:#c3b3db;margin-top:7px}
+main{max-width:760px;margin:auto;padding:13px}
+.status,.panel{background:#151329;border:1px solid #34284f;border-radius:12px;padding:12px;margin-bottom:12px}
+.status{font-size:12px;color:#c9bbdf}
+.modes{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+button{cursor:pointer}
+.mode,.quick button,.secondary{background:#1b1730;border:1px solid #44335e;color:#eee3ff;border-radius:9px;padding:11px 4px;font-size:12px}
+.mode.active{background:#612d96;border-color:#c49aff}
+.chat{height:43vh;min-height:280px;max-height:480px;overflow:auto;background:#0e0c1c;border:1px solid #34284f;border-radius:13px;padding:12px;display:flex;flex-direction:column;gap:11px}
+.msg{max-width:94%;padding:12px;border-radius:12px;font-size:14px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.bot{align-self:flex-start;background:#201735;border:1px solid #46305f}
+.user{align-self:flex-end;background:#4c2477}
+.name{font-size:10px;color:#d4b0ff;font-weight:bold;margin-bottom:5px}
+textarea{width:100%;background:#100e20;color:white;border:1px solid #403354;border-radius:10px;padding:12px;font-size:15px;resize:vertical}
+.actions{display:flex;gap:7px;margin-top:8px}
+.actions button{flex:1;padding:12px 5px;border:0;border-radius:9px;font-weight:bold}
+.send{background:#b88aff;color:#180c2b}
+.secondary{flex:1}
+.quick{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
+.quick button{padding:9px 11px}
+.panel{font-size:13px;line-height:1.6}
+.panel input{width:100%;padding:10px;background:#0e0c1c;border:1px solid #493660;color:white;border-radius:8px}
+.small{font-size:11px;color:#a79ab9;line-height:1.5}
 </style>
 </head>
-
 <body>
 <header>
   <div class="logo">⚡ PSYCHO AI</div>
-  <div class="subtitle">YOUR SMART GAMING & STUDY ASSISTANT</div>
+  <div class="sub">SMART STUDY • MATHS • GAMING</div>
 </header>
 
-<main class="container">
-  <div class="status">
-    <span class="dot"></span>
-    <span id="statusText">PSYCHO AI ready hai</span>
-  </div>
+<main>
+  <div class="status" id="status">🟢 PSYCHO AI V3 ready hai</div>
 
   <div class="modes">
     <button class="mode active" data-mode="general">🧠 General</button>
@@ -110,328 +55,312 @@ button:active{transform:scale(.98)}
   <section class="chat" id="chat" aria-live="polite">
     <div class="msg bot">
       <div class="name">PSYCHO AI</div>
-      Namaste bhai! 😎 Main PSYCHO AI hoon.
+      Namaste bhai! 😎 Main PSYCHO AI V3 hoon, mujhe Mukesh Kumar ne banaya hai.
 
-      Main tumhare sawaalon ka jawab dene ki koshish karunga. Gaming, padhai, coding ya general knowledge mein se koi mode chuno aur sawaal poochho!
+      Main maths calculate kar sakta hoon, kuch school topics samjha sakta hoon aur Free Fire tips de sakta hoon.
+
+      Apna sawaal likho ya 🎙️ button se bolo!
     </div>
   </section>
 
-  <div class="quick-title">⚡ TRY THESE QUESTIONS</div>
   <div class="quick">
-    <button onclick="askQuick('Tum kya kar sakte ho?')">Tum kya kar sakte ho?</button>
-    <button onclick="askQuick('Free Fire mein aim kaise improve karun?')">Free Fire tips</button>
-    <button onclick="askQuick('HTML kya hota hai?')">HTML kya hai?</button>
-    <button onclick="askQuick('Maths mein percentage samjhao')">Percentage samjhao</button>
-    <button onclick="askQuick('Ek mazedaar paheli poochho')">Paheli poochho</button>
+    <button onclick="quick('98765 + 12345')">➕ Addition</button>
+    <button onclick="quick('9999 guna 9999')">✖️ Multiplication</button>
+    <button onclick="quick('Class 10 Pythagoras theorem samjhao')">📐 Class 10 Maths</button>
+    <button onclick="quick('Photosynthesis kya hai?')">🔬 Science</button>
+    <button onclick="quick('Free Fire sensitivity tips do')">🎮 Free Fire</button>
+    <button onclick="quick('Tumhe kisne banaya?')">👨‍💻 Creator</button>
   </div>
 
-  <div class="composer">
-    <textarea id="input" placeholder="Bhai, apna sawaal yahan likho..." rows="2"></textarea>
-    <div class="actions">
-      <button class="btn voice" id="micBtn" onclick="startVoice()">🎙️ Bolo</button>
-      <button class="btn small" onclick="stopSpeaking()">🔇 Stop voice</button>
-      <button class="btn send" onclick="sendMessage()">SEND ➤</button>
-    </div>
+  <textarea id="input" rows="2" placeholder="Sawaal likho... jaise 100000 + 99999"></textarea>
+  <div class="actions">
+    <button class="secondary" id="mic" onclick="voiceInput()">🎙️ Bolo</button>
+    <button class="secondary" onclick="stopVoice()">🔇 Stop</button>
+    <button class="send" onclick="send()">SEND ➤</button>
   </div>
 
-  <div class="note">
-    Version 2 · Rule-based offline assistant · Voice features browser support par depend karte hain. Yeh real online generative AI nahi hai.
+  <div class="panel">
+    <b>🧮 Quick Maths Calculator</b>
+    <p class="small">Addition, subtraction, multiplication, division aur brackets. Example: (100000 + 500) × 2</p>
+    <input id="mathInput" placeholder="100000 + 99999">
+    <button class="send" style="margin-top:8px;padding:11px;border:0;border-radius:8px" onclick="calculateBox()">Calculate</button>
+    <div id="mathResult" style="margin-top:10px"></div>
   </div>
+
+  <p class="small">Note: Yeh offline rule-based assistant hai, full generative AI nahi. Current news, live internet usage aur har textbook question ke liye live data/API ya detailed knowledge base chahiye.</p>
 </main>
 
 <script>
-const chat = document.getElementById("chat");
-const input = document.getElementById("input");
-const statusText = document.getElementById("statusText");
-const micBtn = document.getElementById("micBtn");
-
+const $ = id => document.getElementById(id);
 let mode = "general";
-let recognition = null;
+let recognizer = null;
 let listening = false;
-let lastQuestion = "";
 
-document.querySelectorAll(".mode").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".mode").forEach(b => b.classList.remove("active"));
-    button.classList.add("active");
-    mode = button.dataset.mode;
-
-    const labels = {
-      general: "General mode active 🧠",
-      gaming: "Gaming mode active 🎮",
-      study: "Study mode active 📚",
-      coding: "Coding mode active 💻"
-    };
-
-    statusText.textContent = labels[mode];
-    addMessage("bot", "Mode badal gaya! Ab " + labels[mode] +
-      " Is mode se juda koi bhi sawaal poochho.");
-  });
+document.querySelectorAll(".mode").forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll(".mode").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    mode = b.dataset.mode;
+    $("status").textContent = "Mode active: " + mode.toUpperCase();
+    add("bot", "Bhai, " + mode + " mode on hai! Apna sawaal poochho.");
+  };
 });
 
-function addMessage(who, text) {
-  const bubble = document.createElement("div");
-  bubble.className = "msg " + who;
-
+function add(who, text) {
+  const box = document.createElement("div");
+  box.className = "msg " + who;
   const name = document.createElement("div");
   name.className = "name";
   name.textContent = who === "bot" ? "PSYCHO AI" : "TUM";
-
   const content = document.createElement("div");
   content.textContent = text;
-
-  bubble.appendChild(name);
-  bubble.appendChild(content);
-  chat.appendChild(bubble);
-  chat.scrollTop = chat.scrollHeight;
+  box.append(name, content);
+  if (who === "bot") {
+    box.title = "Jawab sunne ke liye tap karo";
+    box.onclick = () => speak(text);
+  }
+  $("chat").appendChild(box);
+  $("chat").scrollTop = $("chat").scrollHeight;
 }
 
-function askQuick(text) {
-  input.value = text;
-  sendMessage();
+function quick(text) {
+  $("input").value = text;
+  send();
 }
 
-function includesAny(text, words) {
-  return words.some(word => text.includes(word));
-}
+/* Safe arithmetic parser: eval() ka use nahi hota. */
+function mathParser(raw) {
+  let s = raw.toLowerCase().trim();
+  s = s.replace(/,/g, "");
+  s = s.replace(/multiply by|multiplied by|into|guna|गुना|गुणा/g, "*");
+  s = s.replace(/plus|jodo|जोड़ो|जोड़/g, "+");
+  s = s.replace(/minus|ghatao|घटाओ/g, "-");
+  s = s.replace(/divided by|divide by|bhaag|भाग/g, "/");
+  s = s.replace(/[×x]/g, "*").replace(/[÷]/g, "/");
+  s = s.replace(/(\d)\s*%\s*of\s*(\d+)/g, "($1/100*$2)");
 
-function answer(question) {
-  const q = question.toLowerCase()
-    .replace(/[?!.,।]/g, " ")
-    .trim();
-
-  const greetings = [
-    "Haan bhai 😎 bolo, kya jaan'na hai?",
-    "Are bhai! 🔥 Main sun raha hoon. Apna sawaal batao.",
-    "Hello bhai! Kya scene hai? Aaj kya seekhna hai?"
-  ];
-
-  if (includesAny(q, ["hello","hi","namaste","namaskar","hey","kaise ho"])) {
-    return greetings[Math.floor(Math.random() * greetings.length)];
+  const tokens = s.match(/\d+(?:\.\d+)?|[()+\-*/]/g);
+  if (!tokens || tokens.join("") !== s.replace(/\s/g, "")) {
+    throw Error("Maths expression samajh nahi aaya.");
   }
 
-  if (includesAny(q, ["tumhara naam","tera naam","who are you","kaun ho","apna parichay"])) {
-    return "Mera naam PSYCHO AI hai! 🤖 Main ek browser-based assistant hoon. Mere paas General, Gaming, Study aur Coding modes hain.";
-  }
-
-  if (includesAny(q, ["tum kya kar sakte","kya kar sakte","features","kya aata hai"])) {
-    return "Main in cheezon mein help kar sakta hoon, bhai! 😎\n\n🎮 Gaming tips\n📚 School ke concepts\n💻 HTML, CSS aur JavaScript basics\n🧠 General knowledge\n🎙️ Supported browser mein voice input\n🔊 Jawab ko awaaz mein sunna\n\nMain abhi rules se jawab deta hoon, isliye har topic ka jawab nahi jaanta.";
-  }
-
-  if (includesAny(q, ["dhanyavad","thank you","thanks","shukriya"])) {
-    return "Koi baat nahi bhai! 😎 Khushi hui help karke. Aur kya seekhna hai?";
-  }
-
-  if (includesAny(q, ["paheli","riddle"])) {
-    const riddles = [
-      "Paheli 🤔: Aisi kaun si cheez hai jo paani peete hi mar jaati hai?\n\nSocho bhai! Jawab chahiye to 'paheli ka jawab' likho.",
-      "Paheli 🤔: Tumhari kaun si cheez hai jise doosre log tumse zyada istemal karte hain?\n\nSocho aur jawab batao!",
-      "Paheli 🤔: Jitna zyada sukhata hai, utna hi geela hota jaata hai. Woh kya hai?"
-    ];
-    return riddles[Math.floor(Math.random() * riddles.length)];
-  }
-
-  if (includesAny(q, ["paheli ka jawab","riddle answer"])) {
-    return "Pehli paheli ka jawab hai: aag 🔥. Lekin agar tumne doosri paheli ka jawab poochha tha, batao kaunsi wali!";
-  }
-
-  if (includesAny(q, ["joke","chutkula","mazak","funny"])) {
-    return "😂 Teacher: Homework kahan hai?\nStudent: Mam, homework to kiya tha, par copy ne aaj chhutti le li!\n\nAur sunna hai bhai?";
-  }
-
-  if (includesAny(q, ["free fire","freefire","headshot","sensitivity","gaming","game"])) {
-    if (includesAny(q, ["sensitivity","setting","settings"])) {
-      return "🎮 Free Fire sensitivity ke liye ek hi setting sab phones par best nahi hoti. Apne phone par Training Ground mein camera movement, aim aur fire button ko test karo. Dheere-dheere adjust karo. Tumhara phone aur current settings kya hain?";
+  let i = 0;
+  function expression() {
+    let value = term();
+    while (tokens[i] === "+" || tokens[i] === "-") {
+      const op = tokens[i++];
+      const n = term();
+      value = op === "+" ? value + n : value - n;
     }
-
-    if (includesAny(q, ["headshot","aim"])) {
-      return "🎯 Aim improve karne ke liye:\n1. Training Ground mein roz thodi practice karo.\n2. Crosshair ko enemy ke upper-body level par rakho.\n3. Apne controls ko baar-baar mat badlo.\n4. Apne phone par smooth aur stable performance ko priority do.\n\nBhai, tum drag headshot seekhna chahte ho ya normal aim?";
+    return value;
+  }
+  function term() {
+    let value = factor();
+    while (tokens[i] === "*" || tokens[i] === "/") {
+      const op = tokens[i++];
+      const n = factor();
+      if (op === "/" && n === 0) throw Error("Zero se divide nahi kar sakte.");
+      value = op === "*" ? value * n : value / n;
     }
-
-    return "🎮 Gaming mode active hai, bhai! Main Free Fire practice, controls, performance aur gameplay strategy mein help kar sakta hoon. Tumhe kis cheez mein problem aa rahi hai?";
+    return value;
+  }
+  function factor() {
+    if (tokens[i] === "-") { i++; return -factor(); }
+    if (tokens[i] === "+") { i++; return factor(); }
+    if (tokens[i] === "(") {
+      i++;
+      const value = expression();
+      if (tokens[i++] !== ")") throw Error("Bracket complete karo.");
+      return value;
+    }
+    const t = tokens[i++];
+    if (t === undefined || !/^\d+(\.\d+)?$/.test(t))
+      throw Error("Number check karo.");
+    return Number(t);
   }
 
-  if (includesAny(q, ["html","website","web page","webpage"])) {
-    return "💻 HTML website ka structure banata hai. CSS uska design banata hai aur JavaScript usmein interaction add karta hai.\n\nExample:\n<h1>Hello Bhai!</h1>\n<p>Yeh meri website hai.</p>\n\nTum website ka design banana chahte ho ya buttons aur features add karna?";
+  const result = expression();
+  if (i !== tokens.length || !Number.isFinite(result))
+    throw Error("Calculation check nahi ho saka.");
+  return result;
+}
+
+function findMath(text) {
+  const t = text.trim();
+  const hasOperator = /[+*/×÷()]/.test(t) ||
+    /\b(minus|plus|guna|multiply|divided by|divide by|jodo|ghatao)\b/i.test(t);
+  if (!hasOperator) return null;
+
+  let expr = t
+    .replace(/kitna hai|kitna hoga|solve karo|calculate karo|answer batao/gi, "")
+    .replace(/,/g, "");
+  if (!/^[\d\s()+\-*/×÷xX.,a-zA-Z\u0900-\u097F]+$/.test(expr)) return null;
+
+  const result = mathParser(expr);
+  return {expr, result};
+}
+
+function reply(text) {
+  const q = text.toLowerCase().trim();
+
+  // Maths is checked first so expressions receive real calculations.
+  try {
+    const m = findMath(text);
+    if (m) return "🧮 Hisaab:\n" + m.expr.trim() +
+      " = " + Number(m.result.toPrecision(12)) +
+      "\n\nCalculation complete, bhai! 😎";
+  } catch (e) {
+    if (/[0-9]/.test(text) && /[+*/×÷]/.test(text))
+      return "🧮 Maths mein dikkat: " + e.message +
+        "\nExample: (100000 + 99999) * 2";
   }
 
-  if (includesAny(q, ["javascript","java script","js code"])) {
-    return "💻 JavaScript website ko interactive banati hai. Isse buttons click karne par kaam karte hain, messages dikhte hain aur forms validate hote hain.\n\nExample:\nalert('Hello Bhai!');\n\nTum JavaScript ka basic lesson chahte ho ya kisi code mein help?";
+  if (/tumhe kisne banaya|kisne banaya|creator|owner|malik|who made you|who created you/.test(q))
+    return "👨‍💻 Mujhe mere malik Mukesh Kumar ne banaya hai. Main PSYCHO AI hoon!";
+  if (/ghar kaha|ghar kahan|address|tumhare malik kaha rehte|owner.*where|where.*owner/.test(q))
+    return "Mere malik ki koi ek jagah nahi rehti hai, aur main unke baare mein zyada jawab nahi de sakta.";
+  if (/tumhara naam|tera naam|who are you/.test(q))
+    return "Mera naam PSYCHO AI hai! Mujhe Mukesh Kumar ne banaya hai. Main ek rule-based assistant hoon.";
+  if (/hello|namaste|namaskar|^hi$|kaise ho/.test(q))
+    return "Are bhai! 😎 Main badhiya hoon. Tum kya seekhna chahte ho?";
+  if (/addition|jodna|plus|maths|math|ganit|calculator/.test(q) &&
+      !/[0-9].*[+*/×÷]/.test(q))
+    return "🧮 Maths ke liye numbers aur operation likho.\nExample:\n100000 + 99999\n9999 * 9999\n(5000 - 250) / 5";
+  if (/percentage|pratishat|percent/.test(q))
+    return "📐 Percentage ka formula:\nPercentage = (Part ÷ Total) × 100\nExample: 20% of 500 = 500 × 20 ÷ 100 = 100.\n\nCalculation ke liye likho: 20% of 500";
+  if (/pythagoras|पाइथागोरस/.test(q))
+    return "📐 Pythagoras theorem: Samkon tribhuj mein hypotenuse² = base² + perpendicular².\nExample: base 3 aur perpendicular 4 ho, to hypotenuse = √(9+16) = 5.\nYeh theorem right-angled triangle par lagu hoti hai.";
+  if (/quadratic|द्विघात/.test(q))
+    return "📘 Quadratic equation ka standard form ax² + bx + c = 0 hota hai.\nRoots ke liye formula:\nx = (-b ± √(b² - 4ac)) / 2a\nAgar apni equation bhejoge to main uske steps samjhaunga.";
+  if (/photosynthesis|प्रकाश संश्लेषण/.test(q))
+    return "🔬 Photosynthesis mein hare paudhe sunlight, water aur carbon dioxide ka use karke glucose banate hain aur oxygen release karte hain.\n\nSimple form: Carbon dioxide + Water + Sunlight → Glucose + Oxygen.";
+  if (/newton|न्यूटन|force|बल/.test(q))
+    return "🔬 Newton ka second law: Force = mass × acceleration (F = ma).\nAgar mass 2 kg aur acceleration 3 m/s² hai, to force = 6 N.";
+  if (/electric current|विद्युत धारा|ohm|ओम/.test(q))
+    return "⚡ Ohm's law: V = I × R.\nV = voltage, I = current, R = resistance.\nExample: 12 V aur 4 Ω ho, to current I = V/R = 3 A.";
+  if (/english|grammar|noun|verb|adjective|tenses|tense/.test(q))
+    return "📚 English tip:\nNoun = person, place, thing ya idea ka naam.\nVerb = action ya state.\nAdjective = noun ki quality batata hai.\n\nExample: 'The clever boy runs.' Clever adjective hai, boy noun hai aur runs verb hai.\nKis grammar topic ko detail mein samajhna hai?";
+  if (/class 10|class tenth|कक्षा 10|study|padhai|homework|science|chapter/.test(q))
+    return "📚 Main Class 10 ke kuch common concepts, formulas aur English grammar samjha sakta hoon. Har chapter ki complete textbook mere paas nahi hai.\n\nSubject aur exact question likho; main jo jaanta hoon use step-by-step samjhaunga.";
+  if (/free fire|freefire|battle royale|cs ranked|sensitivity|headshot|skill|gaming/.test(q)) {
+    if (/sensitivity/.test(q))
+      return "🎮 Sensitivity har phone aur player ke hisaab se alag lag sakti hai. Training Ground mein ek setting badlo, aim test karo, phir zaroorat ke hisaab se adjust karo.\n\nTumhara phone model kya hai aur problem drag headshot mein hai ya aim control mein?";
+    if (/headshot|aim/.test(q))
+      return "🎯 Aim practice tips:\n1. Crosshair ko upper-body level par rakho.\n2. Training Ground mein drag aur tracking practice karo.\n3. Fire button aur sensitivity ko apne controls ke hisaab se set karo.\n4. Stable FPS aur comfortable controls ko priority do.";
+    if (/skill/.test(q))
+      return "🎮 Skill selection tumhari playing style par depend karti hai. BR mein survival, movement aur team support dekho; CS mein round economy, coordination aur close-range fights ki practice karo. Apne favourite character aur mode batao, main uske hisaab se suggestions dunga.";
+    if (/cs ranked/.test(q))
+      return "🎮 CS Ranked ek 4v4 mode hai: 4 players ek team mein aur 4 doosri team mein, yani 8 players total. Match rules aur mode updates badal sakte hain.";
+    if (/battle royale/.test(q))
+      return "🎮 Battle Royale mein landing, loot, zone rotation aur survival important hain. Player count game ke current mode/version par depend kar sakta hai; main live lobby count verify nahi kar raha.";
+    return "🎮 Free Fire mode:\n• Training Ground mein aim practice karo.\n• Zone ke andar rehne ke liye rotation plan karo.\n• Team ke saath communication rakho.\n• Sensitivity ko apne phone par test karo.\n\nBhai, tum BR khelte ho ya CS Ranked?";
   }
+  if (/internet|online usage|internet sabse zyada|data use/.test(q))
+    return "🌐 Main real-time internet usage ka live data nahi dekh sakta, isliye yeh confirm nahi kar sakta ki abhi sabse zyada internet kahan use ho raha hai. Iske liye current network traffic statistics chahiye.";
+  if (/country|desh|rajdhani|capital/.test(q))
+    return "🌍 Kisi country ya capital ke baare mein poochho, jaise 'Japan ki capital kya hai?' Main basic geography ke kai sawaalon mein help kar sakta hoon.";
+  if (/code|coding|html|javascript|website|programming/.test(q))
+    return "💻 HTML website ka structure banata hai, CSS design karta hai aur JavaScript interaction add karti hai.\n\nExample HTML:\n<h1>Hello Bhai!</h1>\n\nAgar code fix karna hai to code aur error message bhejo.";
+  if (/joke|chutkula|mazak/.test(q))
+    return "😂 Teacher: Homework kahan hai?\nStudent: Mam, notebook ghar par padhai kar rahi hai!";
+  if (/paheli|riddle/.test(q))
+    return "🤔 Paheli: Aisi kaun si cheez hai jo jitna zyada sukhati hai, khud utni geeli hoti jaati hai?\n\nSocho bhai! Jawab batao.";
+  if (/thanks|thank you|shukriya/.test(q))
+    return "Koi baat nahi bhai! 😎 PSYCHO AI hamesha help karne ki koshish karega.";
 
-  if (includesAny(q, ["css","design","styling"])) {
-    return "🎨 CSS website ka look badalne ke liye hota hai. Isse colors, font, spacing, layout aur animation set kar sakte ho.\n\nExample:\nbody { background: #090817; color: white; }\n\nTum kis cheez ka design banana chahte ho?";
-  }
-
-  if (includesAny(q, ["coding","programming","code","error","bug"])) {
-    return "💻 Coding mode mein main HTML, CSS aur JavaScript ke basics samjha sakta hoon.\n\nAgar code mein error hai, to error message aur us code ka relevant hissa bhejo. Main use samajhne aur fix karne mein help karunga.";
-  }
-
-  if (includesAny(q, ["percentage","pratishat"])) {
-    return "📚 Percentage ka matlab hota hai 100 mein se kitna.\n\nExample: 50% = 50/100 = aadha.\n\nAgar 200 ka 10% nikalna ho:\n200 × 10 ÷ 100 = 20.\n\nBhai, ek example khud solve karke dekhna chahoge?";
-  }
-
-  if (includesAny(q, ["math","maths","ganit","fraction","algebra"])) {
-    return "📚 Maths mein main concept aur calculation samjha sakta hoon. Apna poora sawaal likho, jaise '12 × 15 kitna hai?' ya equation bhejo. Main step-by-step samjhaunga.";
-  }
-
-  if (includesAny(q, ["science","vigyan","photosynthesis"])) {
-    return "🔬 Science mode: Photosynthesis woh process hai jisme green plants sunlight, water aur carbon dioxide ka use karke apna food banate hain. Is process mein oxygen bhi release hoti hai.\n\nBhai, tum kis class ka science topic padh rahe ho?";
-  }
-
-  if (includesAny(q, ["history","itihas","geography","bhugol","general knowledge","gk"])) {
-    return "🧠 Main history, geography aur general knowledge ke kai basic topics samjha sakta hoon. Apna specific sawaal poochho, jaise kisi desh ki rajdhani ya kisi historical event ke baare mein.";
-  }
-
-  if (includesAny(q, ["study","padhai","homework","exam","yaad kaise"])) {
-    return "📚 Padhai ke liye ek simple method:\n1. Topic ko chhote parts mein padho.\n2. Book band karke apne words mein samjhao.\n3. Khud se practice questions karo.\n4. Baad mein phir se revision karo.\n\nBhai, kaunsa subject padh rahe ho?";
-  }
-
-  if (includesAny(q, ["voice","awaaz","bolkar","mic","microphone"])) {
-    return "🎙️ Voice input ke liye Bolo button dabao aur permission allow karo. Jawab sunne ke liye kisi AI reply par tap karo. Agar mic kaam na kare, browser support aur microphone permission check karo.";
-  }
-
-  if (includesAny(q, ["jod","addition","plus"])) {
-    return "➕ Addition mein numbers ko joda jaata hai. Example: 25 + 17 = 42.\n\nApne numbers bhejo, bhai, main hisaab karne mein help karunga.";
-  }
-
-  if (includesAny(q, ["guna","multiply","multiplication"])) {
-    return "✖️ Multiplication repeated addition jaisa hota hai. Example: 4 × 3 = 4 + 4 + 4 = 12.\n\nKaunsa multiplication solve karna hai?";
-  }
-
-  if (includesAny(q, ["minus","ghata","subtraction"])) {
-    return "➖ Subtraction mein ek number se doosra number ghataate hain. Example: 50 − 18 = 32.\n\nApna calculation bhejo, bhai!";
-  }
-
-  if (includesAny(q, ["time","samay"])) {
-    return "⏰ Main tumhare phone ki exact current time automatically nahi dekh raha. Phone ke status bar ya Clock app mein time check kar sakte ho.";
-  }
-
-  if (includesAny(q, ["help","madad"])) {
-    return "🤝 Bilkul bhai! Main padhai, basic coding, Free Fire tips aur general questions mein help kar sakta hoon. Apni problem seedhe likho.";
-  }
-
-  const modeReplies = {
-    general: "🧠 Bhai, is sawaal ka exact jawab mere current rule-set mein nahi mila. Thoda aur detail mein poochho ya sawaal ko doosre tarike se likho. Main koshish karta hoon!",
-    gaming: "🎮 Bhai, gaming mode mein hoon! Apne game ka naam aur exact problem batao, jaise aim, controls, lag ya strategy.",
-    study: "📚 Bhai, subject, class aur poora question likho. Main jo concepts mere rules mein hain unhe samjhaunga; zaroorat pade to topic ko chhote parts mein baantenge.",
-    coding: "💻 Bhai, code ka relevant hissa, expected result aur error message bhejo. Main problem ko samajhne mein help karunga."
+  const fallback = {
+    general:"🧠 Bhai, is sawaal ka jawab mere current knowledge rules mein nahi mila. Sawaal ko thoda aur detail mein likho.",
+    gaming:"🎮 Game ka naam aur exact problem batao, jaise aim, sensitivity, lag ya strategy.",
+    study:"📚 Class, subject aur poora question likho. Main concept aur steps samjhane ki koshish karunga.",
+    coding:"💻 Code ka relevant hissa aur error message bhejo. Main debugging mein help karunga."
   };
-
-  return modeReplies[mode];
+  return fallback[mode];
 }
 
-function sendMessage() {
-  const text = input.value.trim();
+function send() {
+  const text = $("input").value.trim();
   if (!text) return;
-
-  stopSpeaking();
-  addMessage("user", text);
-  input.value = "";
-  lastQuestion = text;
-
-  statusText.textContent = "Jawab taiyar ho raha hai...";
-
+  stopVoice();
+  add("user", text);
+  $("input").value = "";
+  $("status").textContent = "Jawab taiyar ho raha hai...";
   setTimeout(() => {
-    const reply = answer(text);
-    addMessage("bot", reply);
-    statusText.textContent = "PSYCHO AI ready hai";
-  }, 250);
+    add("bot", reply(text));
+    $("status").textContent = "🟢 PSYCHO AI ready hai";
+  }, 180);
 }
 
-input.addEventListener("keydown", function(event) {
-  if (event.key === "Enter" && !event.shiftKey) {
-    event.preventDefault();
-    sendMessage();
+$("input").addEventListener("keydown", e => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    send();
   }
 });
+
+function calculateBox() {
+  const expr = $("mathInput").value.trim();
+  try {
+    const result = mathParser(expr);
+    $("mathResult").textContent = "Jawab: " + result;
+  } catch (e) {
+    $("mathResult").textContent = "Expression check karo. Example: (100000 + 99999) * 2";
+  }
+}
 
 function speak(text) {
   if (!("speechSynthesis" in window)) {
-    statusText.textContent = "Is browser mein voice output supported nahi hai";
+    $("status").textContent = "Is browser mein voice output supported nahi hai.";
     return;
   }
-
-  stopSpeaking();
-
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "hi-IN";
-  utterance.rate = 1;
-  utterance.pitch = 1;
-
-  utterance.onstart = () => {
-    statusText.textContent = "PSYCHO AI bol raha hai 🔊";
-  };
-  utterance.onend = () => {
-    statusText.textContent = "PSYCHO AI ready hai";
-  };
-
-  window.speechSynthesis.speak(utterance);
+  stopVoice();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = "hi-IN";
+  utter.rate = 0.95;
+  utter.pitch = 1;
+  utter.onstart = () => $("status").textContent = "🔊 PSYCHO AI bol raha hai";
+  utter.onend = () => $("status").textContent = "🟢 PSYCHO AI ready hai";
+  speechSynthesis.speak(utter);
 }
 
-chat.addEventListener("click", function(event) {
-  const bubble = event.target.closest(".msg.bot");
-  if (!bubble) return;
-
-  const content = bubble.querySelector("div:last-child");
-  if (content) speak(content.textContent);
-});
-
-function stopSpeaking() {
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
+function stopVoice() {
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (recognizer && listening) {
+    try { recognizer.stop(); } catch(e) {}
   }
 }
 
-function startVoice() {
-  const SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
-
-  if (!SpeechRecognition) {
-    statusText.textContent =
-      "Voice input is browser mein supported nahi hai. Chrome mein try karo.";
+function voiceInput() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {
+    $("status").textContent = "Voice input supported nahi hai. Chrome mein try karo.";
     return;
   }
-
-  if (listening && recognition) {
-    recognition.stop();
+  if (listening && recognizer) {
+    recognizer.stop();
     return;
   }
+  recognizer = new SR();
+  recognizer.lang = "hi-IN";
+  recognizer.interimResults = false;
+  recognizer.maxAlternatives = 1;
 
-  recognition = new SpeechRecognition();
-  recognition.lang = "hi-IN";
-  recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
-
-  recognition.onstart = () => {
+  recognizer.onstart = () => {
     listening = true;
-    micBtn.classList.add("listening");
-    micBtn.textContent = "⏹️ Sun raha hoon...";
-    statusText.textContent = "Bolo bhai, main sun raha hoon 🎙️";
+    $("mic").textContent = "⏹️ Sun raha hoon";
+    $("status").textContent = "🎙️ Bolo bhai...";
   };
-
-  recognition.onresult = event => {
-    const transcript = event.results[0][0].transcript;
-    input.value = transcript;
-    statusText.textContent = "Tumhari voice text mein badal gayi";
+  recognizer.onresult = e => {
+    $("input").value = e.results[0][0].transcript;
   };
-
-  recognition.onerror = event => {
-    statusText.textContent = "Voice error: " + event.error +
-      ". Mic permission aur internet check karo.";
+  recognizer.onerror = e => {
+    $("status").textContent = "Mic error: " + e.error + ". Permission check karo.";
   };
-
-  recognition.onend = () => {
+  recognizer.onend = () => {
     listening = false;
-    micBtn.classList.remove("listening");
-    micBtn.textContent = "🎙️ Bolo";
+    $("mic").textContent = "🎙️ Bolo";
   };
-
-  try {
-    recognition.start();
-  } catch (error) {
-    statusText.textContent = "Mic dobara try karo.";
-  }
+  try { recognizer.start(); }
+  catch(e) { $("status").textContent = "Mic dobara try karo."; }
 }
 </script>
 </body>
